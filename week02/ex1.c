@@ -10,11 +10,11 @@ int main() {
     float d = FLT_MAX;
     double f = DBL_MAX;
 
-    printf("%s%i%s%i%s", "integer: MAX=", a, " SIZE=", sizeof(a), "\n");
-    printf("%s%d%s%i%s", "unsigned short: MAX=", b, " SIZE=", sizeof(b), "\n");
-    printf("%s%li%s%i%s", "long: MAX=", c, " SIZE=", sizeof(c), "\n");
-    printf("%s%f%s%i%s", "float: MAX=", d, " SIZE=", sizeof(d), "\n");
-    printf("%s%f%s%i%s", "double: MAX=", f, " SIZE=", sizeof(f), "\n");
+    printf("%s%d%s%lu%s", "integer: MAX=", a, " SIZE=", sizeof(a), "\n");
+    printf("%s%d%s%lu%s", "unsigned short: MAX=", b, " SIZE=", sizeof(b), "\n");
+    printf("%s%li%s%lu%s", "long: MAX=", c, " SIZE=", sizeof(c), "\n");
+    printf("%s%f%s%lu%s", "float: MAX=", d, " SIZE=", sizeof(d), "\n");
+    printf("%s%f%s%lu%s", "double: MAX=", f, " SIZE=", sizeof(f), "\n");
 
     return 0;
 }
