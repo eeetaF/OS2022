@@ -19,7 +19,7 @@ int main() {
 
     printf("Enter ages: ");
     for (int i = 0; i < 5; ++i) {
-        scanf_s("%d", &ms[i]);
+        scanf("%d", &ms[i]);
         ms[i] = foo(ms[i]);
         printf("Birth year: %d\n", ms[i]);
     }
