@@ -25,4 +25,5 @@ int main() {
     }
 
     free(ms);
+    return 0;
 }
