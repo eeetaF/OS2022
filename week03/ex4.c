@@ -45,8 +45,8 @@ void *doubmult(const void *a, const void *b) {
 
 int main() {
     //test the previous function on an array of 5 doubles and another array of 5 integers and print the result for each array to stdout.
-    int a[5] = {132, -6, 0, 0, 3};
-    double b[5] = {69.1, 0.0, 1.0, 5.5, 3.0};
+    int a[5] = {132, -6, 1, 1, 3};
+    double b[5] = {69.1, 1.1, 1.0, 5.5, 3.0};
     int one = 1;
     int zero = 0;
 
