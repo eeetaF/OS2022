@@ -21,7 +21,7 @@ struct Directory {
 
 // add to file(struct File* file, const char* str) which overwrites the file content with the new content.
 void add_to_file(struct File *file, const char *str) {
-    strcpy_s(file->data, strlen(str) * sizeof(char), str);
+    strcpy(file->data, str);
     file->size = strlen(file->data);
 }
 
@@ -33,7 +33,7 @@ void add_dir(struct Directory *dir, struct Directory *dir_to_add) {
 
 // append to file(struct File* file, const char* str) which appends the new content to the end of the file.
 void append_to_file(struct File *file, const char *str) {
-    strcat_s(file->data, strlen(str) * sizeof(char), str);
+    strcat(file->data, str);
 }
 
 // pwd file(struct File* file) prints to stdout the path of the file.
@@ -45,9 +45,9 @@ void pwd_file(struct File *file) {
 void add_file(struct File *file, struct Directory *dir) {
     dir->files[dir->nf] = *file;
     dir->nf++;
-    strcpy_s(file->path, strlen(dir->path) * sizeof(char), dir->path);
-    strcat_s(file->path, strlen("/") * sizeof(char), "/");
-    strcat_s(file->path, strlen(file->name) * sizeof(char), file->name);
+    strcpy(file->path, dir->path);
+    strcat(file->path, "/");
+    strcat(file->path, file->name);
 }
 
 int main() {
@@ -59,23 +59,23 @@ int main() {
     add_dir(&root, &bin);
     root.nd = 2;
 
-    strcpy_s(root.path, strlen("/") * sizeof(char), "/");
-    strcpy_s(bin.path, strlen("/bin") * sizeof(char), "/bin");
-    strcpy_s(home.path, strlen("/home") * sizeof(char), "/home");
+    strcpy(root.path, "/");
+    strcpy(bin.path, "/bin");
+    strcpy(home.path, "/home");
 
     // Add a file bash to the directory bin
     bash.id = 1;
-    strcat_s(bash.name, strlen("bash") * sizeof(char), "bash");
+    strcat(bash.name, "bash");
 
     // Add two files ex3 1.c and ex3 2.c to the directory home.
     // The file ex3 1.c contains the code: “int printf(const char * format, ...);”
     // And the file ex3 2.c contains the code: “//This is a comment in C language”
     // Add the content “Bourne Again Shell!!” to the file bash
     ex3_1.id = 2;
-    strcat_s(ex3_1.name, strlen("bash") * sizeof(char), "ex3_1.c");
+    strcat(ex3_1.name, "ex3_1.c");
 
     ex3_2.id = 3;
-    strcat_s(ex3_2.name, strlen("bash") * sizeof(char), "ex3_2.c");
+    strcat(ex3_2.name, "ex3_2.c");
 
     add_to_file(&ex3_1, "int printf(const char * format, ...);");
     add_to_file(&ex3_2, "//This is a comment in C language");
