@@ -65,14 +65,14 @@ int main() {
 
     // Add a file bash to the directory bin
     bash.id = 1;
-    strcat_s(bash.name, strlen("bash") * sizeof(char),"bash");
+    strcat_s(bash.name, strlen("bash") * sizeof(char), "bash");
 
     // Add two files ex3 1.c and ex3 2.c to the directory home.
     // The file ex3 1.c contains the code: “int printf(const char * format, ...);”
     // And the file ex3 2.c contains the code: “//This is a comment in C language”
     // Add the content “Bourne Again Shell!!” to the file bash
     ex3_1.id = 2;
-    strcat_s(ex3_1.name, strlen("bash") * sizeof(char),"ex3_1.c");
+    strcat_s(ex3_1.name, strlen("bash") * sizeof(char), "ex3_1.c");
 
     ex3_2.id = 3;
     strcat_s(ex3_2.name, strlen("bash") * sizeof(char), "ex3_2.c");
