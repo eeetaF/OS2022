@@ -36,7 +36,7 @@ int main() {
     printf("\n");
     
     ptr = myrealloc(ptr, 15 * sizeof(int));
-    for (int i = 0; i < 15; i++)
+    for (int i = 0; i < 30; i++)
         printf("%d ", ptr[i]);
     
     free(ptr);
