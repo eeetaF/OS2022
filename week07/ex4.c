@@ -3,12 +3,12 @@
 #include <malloc.h>
 
 void myrealloc(void *ptr, size_t new_size) {
-    if (ptr == NULL) {
+    if (ptr == NULL)
         ptr = malloc(new_size);
-    }
-    if (new_size == 0) {
+    
+    if (new_size == 0)
         free(ptr);
-    }
+    
     if (new_size > 0) {
         void *new_ptr = malloc(new_size);
 
@@ -22,8 +22,6 @@ void myrealloc(void *ptr, size_t new_size) {
                 ((char *)new_ptr)[i] = ((char *)ptr)[i];
             }
         }
-
-        free(ptr);
         ptr = new_ptr;
     }
 }
@@ -34,10 +32,12 @@ int main() {
         ptr[i] = i;
         printf("%d ", ptr[i]);
     }
-    myrealloc(ptr, 5 * sizeof(int));
-    for (int i = 0; i < 5; i++) {
+    printf("\n");
+    
+    myrealloc(ptr, 15 * sizeof(int));
+    for (int i = 0; i < 15; i++)
         printf("%d ", ptr[i]);
-    }
+    
     free(ptr);
     return 0;
 }
