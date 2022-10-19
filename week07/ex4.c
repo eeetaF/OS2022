@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <malloc.h>
 
-void myrealloc(void *ptr, size_t new_size) {
+void* myrealloc(void *ptr, size_t new_size) {
     if (ptr == NULL)
         ptr = malloc(new_size);
     
@@ -24,6 +24,7 @@ void myrealloc(void *ptr, size_t new_size) {
         }
         ptr = new_ptr;
     }
+    return ptr;
 }
 
 int main() {
@@ -34,7 +35,7 @@ int main() {
     }
     printf("\n");
     
-    myrealloc(ptr, 15 * sizeof(int));
+    ptr = myrealloc(ptr, 15 * sizeof(int));
     for (int i = 0; i < 15; i++)
         printf("%d ", ptr[i]);
     
