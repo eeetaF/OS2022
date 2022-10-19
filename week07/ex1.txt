@@ -1,0 +1,2 @@
+   text	   data	    bss	    dec	    hex	filename
+   1381	    600	      8	   1989	    7c5	/home/marat/week01/ex4
